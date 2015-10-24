@@ -1,10 +1,13 @@
-$(window).on('resize', function(e) {
+var imgW = $('.hills').width() - $(window).width()
+var imgH = $(window).height() + imgW
 
-	var imgW = $('.hills').width();
-	var imgH = $('.hills').height();
+$('body').css('height', imgH);
 
-	console.log(imgW + "*" + imgH)
+$(window).on('scroll', function(e) {
 
-	$('.hills').css('position','relative');
+	var scr = $(window).scrollTop ();
+	$('.hills').css('left', - scr);
+
+	console.log(scr);
 
 });
